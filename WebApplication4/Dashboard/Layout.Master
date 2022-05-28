@@ -13,17 +13,42 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-
-    <div class="flex-row">
-    <aside>
-        
-    </aside>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" style="width:100%;">
+    <div >
+     <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">DashBoard</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/Dashboard/user.aspx">users</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Dashboard/stories.aspx">Stories</a>
+            </li>
+                <li class="nav-item">
+              <a class="nav-link" href="/Dashboard/songs.aspx">Songs</a>
+            </li>
+                  <li class="nav-item">
+              <a class="nav-link" href="/Dashboard/movies.aspx">Movies</a>
+            </li>
+            
+          </ul>
+            
+            <asp:Button ID="LogoutButtonNavbar" runat="server" Text="Logout"  CssClass="btn btn-primary btn-nav" OnClick="LogoutButtonNavbar_Click"/>
+            
+        </div>
+      </div>
+    </nav>
+    
         
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
     
-    </form>
         </div>
+    </form>
 </body>
 </html>

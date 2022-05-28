@@ -7,7 +7,7 @@
    
     <asp:Label ID="Label1" runat="server" CssClass="empty-table" Text="No Records Found"></asp:Label>
      
-    <div class="row" style="padding:3rem 1rem;">
+    <div class="row" >
 <div class="col-md-10 col-md-offset-1" style="margin:auto;">
 <div class="form-group">
 
@@ -54,30 +54,33 @@
         </div>
     </div>
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" 
-    CssClass="table table-bordered table-condensed table-responsive table-hover" OnRowDeleted="GridView1_RowDeleted" AllowPaging="True" PageSize="5"  >
+    CssClass="table table-bordered table-condensed table-responsive table-hover" OnRowDeleted="GridView1_RowDeleted" AllowPaging="True" PageSize="5" OnRowDeleting="GridView1_RowDeleting"  >
         <Columns>
-            <asp:CommandField ButtonType="Button" ShowEditButton="True" CausesValidation="False" InsertVisible="False" ShowCancelButton="False" ShowDeleteButton="True" />
-            <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
+            <asp:CommandField ButtonType="Button" ShowEditButton="True" ControlStyle-CssClass="btn btn-warning" HeaderText="Edit Action"    HeaderStyle-Width="14%" ItemStyle-Width="14%"
+            FooterStyle-Width="14%"  ControlStyle-ForeColor="White"/>
+            <asp:CommandField ButtonType="Button" ShowDeleteButton="True"  ControlStyle-CssClass="btn btn-danger" HeaderText="Delete Action"    HeaderStyle-Width="10%" ItemStyle-Width="10%"
+            FooterStyle-Width="10%"/>
             <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
             <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
             <asp:TemplateField HeaderText="Image">
                 <ItemTemplate>
-                      <asp:Image ID="Image1" Height = "100" Width = "100" runat="server" 
+                    <asp:Label ID="imageLabel" runat="server" Visible="false" Text='<%# ResolveUrl(Eval("Image").ToString()) %>' ></asp:Label>
+                      <asp:Image ID="Image1" Height = "50" Width = "50" runat="server" 
              ImageUrl='<%# ResolveUrl(Eval("Image").ToString()) %>' />
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Path">
                 <ItemTemplate>
-                    <asp:HyperLink ID="linkPath" runat="server" NavigateUrl='<%# ResolveUrl(Eval("Path").ToString()) %>' Target="_blank" Text="Link"/>
-            
+                    <asp:HyperLink ID="linkPath" runat="server" NavigateUrl='<%# ResolveUrl(Eval("Path").ToString()) %>' Target="_blank" Text="Link" />
+                
                 </ItemTemplate>
             </asp:TemplateField>
             
-            <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
+            <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" ReadOnly="True" />
         </Columns>
         <PagerSettings Mode="NumericFirstLast" />
     </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [stories]" DeleteCommand="DELETE FROM [stories] WHERE [Id] =@Id"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [stories]" DeleteCommand="DELETE FROM [stories] WHERE [Id] =@Id" UpdateCommand="UPDATE [stories] SET [Title] = @Title, [Description] = @Description  WHERE [Id] = @Id"></asp:SqlDataSource>
 
       </div></div></div>
     

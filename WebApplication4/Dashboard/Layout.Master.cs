@@ -16,5 +16,12 @@ namespace WebApplication4.Dashboard
                 Response.Redirect("../pages/Login.aspx");
             }
         }
+
+        protected void LogoutButtonNavbar_Click(object sender, EventArgs e)
+        {
+            Session.Remove("user");
+            Session.Remove("userAdmin");
+            Response.Redirect(Request.RawUrl);
+        }
     }
 }

@@ -86,5 +86,17 @@ namespace WebApplication4.Dashboard
             }
             else Label1.Visible = false;
         }
+
+        protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            GridViewRow row = (GridViewRow)GridView1.Rows[e.RowIndex];
+            Label lblDeleteImageName = (Label)row.FindControl("imageLabel");
+            string path = lblDeleteImageName.Text;
+
+            string folder = path.Substring(0, path.LastIndexOf(("/")));
+            string mappedPath = Server.MapPath(folder);
+
+            Directory.Delete(mappedPath, true);
+        }
     }
 }

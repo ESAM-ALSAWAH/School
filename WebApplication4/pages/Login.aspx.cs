@@ -35,7 +35,7 @@ namespace WebApplication4.pages
                     
 
                     Session["userAdmin"] = "True";
-                    Response.Redirect("../Dashboard/stories.aspx");
+                    Response.Redirect("../Dashboard/user.aspx");
                     return;
                 }
                 Session["user"] = Email.Text;
