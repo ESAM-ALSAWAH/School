@@ -4,9 +4,95 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-    <asp:FileUpload ID="FileUpload1" runat="server" CssClass="form-control"/>
-    <asp:Button ID="Button1" runat="server" Text="Upload"  CssClass="btn btn-primary btn-lg" OnClick="Button1_Click"/>
+   
+    <asp:Label ID="Label1" runat="server" CssClass="empty-table" Text="No Records Found"></asp:Label>
+     
+    <div class="row" style="padding:3rem 1rem;">
+<div class="col-md-10 col-md-offset-1" style="margin:auto;">
+<div class="form-group">
 
+    <h1 style="margin:10px">Story Mangament</h1>
+     <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin:1rem 0">
+        Create 
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create Story</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-outline flex-fill mb-0 mt-2">
+                      
+                    <label class="form-label" for="form3Example1c">Title<strong style="color:red;">*</strong></label>
+                <asp:TextBox ID="title" runat="server" CssClass="form-control input"></asp:TextBox>
+                </div>
+                 <div class="form-outline flex-fill mb-0 mt-2">                      
+                    <label class="form-label" for="form3Example1c">Description<strong style="color:red;">*</strong></label>
+                    <asp:TextBox ID="description" runat="server" CssClass="form-control input"></asp:TextBox>
+                </div>
+                <div class="form-outline flex-fill mb-0 mt-2">                      
+                    <label class="form-label" for="form3Example1c">File/pdf<strong style="color:red;">*</strong></label>
+                    <asp:FileUpload ID="FileUpload1"  runat="server" CssClass="form-control"/>
+                </div>
+                <div class="form-outline flex-fill mb-0 mt-2">                      
+                    <label class="form-label" for="form3Example1c">File/image<strong style="color:red;">*</strong></label>
+                    <asp:FileUpload ID="FileImage"  runat="server" CssClass="form-control"/>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <asp:Button ID="Button1" runat="server" Text="Create"  CssClass="btn btn-primary " OnClick="Button1_Click" />
+                
+            </div>
+        </div>
+        </div>
+    </div>
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" 
+    CssClass="table table-bordered table-condensed table-responsive table-hover" OnRowDeleted="GridView1_RowDeleted" AllowPaging="True" PageSize="5"  >
+        <Columns>
+            <asp:CommandField ButtonType="Button" ShowEditButton="True" CausesValidation="False" InsertVisible="False" ShowCancelButton="False" ShowDeleteButton="True" />
+            <asp:BoundField DataField="Id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="Id" />
+            <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
+            <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
+            <asp:TemplateField HeaderText="Image">
+                <ItemTemplate>
+                      <asp:Image ID="Image1" Height = "100" Width = "100" runat="server" 
+             ImageUrl='<%# ResolveUrl(Eval("Image").ToString()) %>' />
+                </ItemTemplate>
+            </asp:TemplateField>
+            <asp:TemplateField HeaderText="Path">
+                <ItemTemplate>
+                    <asp:HyperLink ID="linkPath" runat="server" NavigateUrl='<%# ResolveUrl(Eval("Path").ToString()) %>' Target="_blank" Text="Link"/>
+            
+                </ItemTemplate>
+            </asp:TemplateField>
+            
+            <asp:BoundField DataField="Date" HeaderText="Date" SortExpression="Date" />
+        </Columns>
+        <PagerSettings Mode="NumericFirstLast" />
+    </asp:GridView>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [stories]" DeleteCommand="DELETE FROM [stories] WHERE [Id] =@Id"></asp:SqlDataSource>
+
+      </div></div></div>
     
 
+    
+    <script >
+        document.getElementById("<%=Button1.ClientID%>").addEventListener("click", function () {
+            const file = !!document.getElementById("<%=FileUpload1.ClientID %>").value 
+            if (!file) {
+                document.getElementById("<%=FileUpload1.ClientID%>").classList.add("error-input")
+            } else document.getElementById("<%=FileUpload1.ClientID%>").classList.remove("error-input")
+            return false;
+        })
+        document.getElementById("<%=FileUpload1.ClientID %>").setAttribute('accept', 'application/pdf');
+        document.getElementById("<%=FileImage.ClientID %>").setAttribute('accept', "image/png, image/gif, image/jpeg");
+    </script>
 </asp:Content>
+ 
