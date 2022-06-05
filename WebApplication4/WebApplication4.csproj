@@ -69,6 +69,8 @@
     <Content Include="Dashboard\stories.aspx" />
     <Content Include="Dashboard\styles\styles.css" />
     <Content Include="Dashboard\user.aspx" />
+    <Content Include="lib\aos.css" />
+    <Content Include="lib\aos.js" />
     <Content Include="packages.config" />
     <Content Include="js\main.js" />
     <Content Include="Dashboard\Layout.Master" />
@@ -161,8 +163,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="components\" />
-    <Folder Include="lib\" />
     <Folder Include="uploads\movies\" />
     <Folder Include="uploads\songs\" />
     <Folder Include="uploads\stories\" />
