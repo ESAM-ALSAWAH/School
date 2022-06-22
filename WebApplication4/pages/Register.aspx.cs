@@ -10,7 +10,7 @@ namespace WebApplication4.pages
     public partial class Register : System.Web.UI.Page
     {
 
-        string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MyHomeWork.mdf;Integrated Security=True";
+        string connectionString = "Data Source=SQL8002.site4now.net;Initial Catalog=db_a889d5_schooldb;User Id=db_a889d5_schooldb_admin;Password=Alaa6865978";
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -47,7 +47,7 @@ namespace WebApplication4.pages
 
             try
             {
-                string ins = "Insert into [users] (Name,Password,Email,Gender,Phone,Country,City,Addres,FatherName,MotherName,Admin,Language,SpeackLanguage,LearnLanguage,LevelLanguage) values('" + Name.Text + "','" + Password.Text + "','" + Email.Text + "','" + DropGender.SelectedValue + "','" + phone.Text + "','" + country.Text + "','" + city.Text + "','" + addres.Text + "','" + FatherName.Text + "','" + MotherName.Text + "','" + DropDownAdmin.SelectedValue + "','" + DropLanguage.SelectedValue + "','" + DropCanSpeak.SelectedValue + "','" + DropStudied.SelectedValue + "','" + DropLevel.SelectedValue + "')";
+                string ins = "Insert into [users] (Name,Password,Email,Gender,Phone,Country,City,Addres,FatherName,MotherName,Admin,Language,SpeakLanguage,LearnLanguage,LevelLanguage) values('" + Name.Text + "','" + Password.Text + "','" + Email.Text + "','" + DropGender.SelectedValue + "','" + phone.Text + "','" + country.Text + "','" + city.Text + "','" + addres.Text + "','" + FatherName.Text + "','" + MotherName.Text + "','" + DropDownAdmin.SelectedValue + "','" + DropLanguage.SelectedValue + "','" + DropCanSpeak.SelectedValue + "','" + DropStudied.SelectedValue + "','" + DropLevel.SelectedValue + "')";
                 SqlConnection con = new SqlConnection(connectionString);
                 if (checkemail(con))
                 {

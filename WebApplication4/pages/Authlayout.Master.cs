@@ -19,7 +19,7 @@ namespace WebApplication4.pages
             else
             {
                 Panel1.Visible = true;
-
+                
                 LogoutButtonNavbar.Visible= false;
             }
         }

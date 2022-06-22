@@ -56,7 +56,7 @@
         </div>
     </div>
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" 
-    CssClass="table table-bordered table-condensed table-responsive table-hover"  AllowPaging="True" PageSize="5" DataKeyNames="Id" OnRowDeleted="GridView1_RowDeleted" OnRowDeleting="GridView1_RowDeleting"  >
+    CssClass="table table-bordered table-condensed table-responsive table-hover"  AllowPaging="True" PageSize="5" DataKeyNames="Id" OnRowDeleted="GridView1_RowDeleted" OnRowDeleting="GridView1_RowDeleting" OnRowUpdating="GridView1_RowUpdating1"  >
         <Columns>
           
             <asp:CommandField ButtonType="Button" ShowEditButton="True" ControlStyle-CssClass="btn btn-warning" HeaderText="Edit Action"    HeaderStyle-Width="14%" ItemStyle-Width="14%"
@@ -79,8 +79,10 @@
                 
                 </ItemTemplate>
             </asp:TemplateField>
-            <asp:TemplateField HeaderText="Image" >
-                
+           <asp:TemplateField HeaderText="Image" >
+                <EditItemTemplate>
+                        <asp:FileUpload ID="FileUploadImage"  runat="server" CssClass="form-control"/>
+                    </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="imageLabel" runat="server" Visible="false" Text='<%# ResolveUrl(Eval("Image").ToString()) %>' ></asp:Label>
                       <asp:Image ID="Image1" Height = "50" Width = "50" runat="server" 

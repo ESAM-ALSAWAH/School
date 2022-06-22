@@ -13,7 +13,7 @@
 <div style="overflow-x:auto;">
 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" Width="100%"
 
-CssClass="table table-bordered table-condensed table-responsive table-hover" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AllowPaging="True" DataKeyNames="Id" OnRowEditing="GridView1_RowEditing"
+CssClass="table table-bordered table-condensed table-responsive table-hover" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" AllowPaging="True" OnRowEditing="GridView1_RowEditing"
 >
     <Columns>
         <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
@@ -26,7 +26,7 @@ CssClass="table table-bordered table-condensed table-responsive table-hover" OnS
     </Columns>       
         
 </asp:GridView>
-    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [Id], [Name], [Email], [Gender], [Phone], [Country], [City] FROM [users]"  DeleteCommand="DELETE FROM [users] WHERE [Id] = @Id" UpdateCommand="UPDATE [users] SET [Name] = @Name, [Email] = @Email, [Gender] = @Gender, [Phone] = @Phone WHERE [Id] = @Id"></asp:SqlDataSource></div>
+    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:schoolmangamentConnectionString %>" SelectCommand="SELECT [Name], [Email], [Gender], [Phone], [Country], [City] FROM [users]"></asp:SqlDataSource></div>
 
 </div>
 

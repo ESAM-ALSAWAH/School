@@ -1,4 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Dashboard/Layout.Master" AutoEventWireup="true" CodeBehind="stories.aspx.cs" Inherits="WebApplication4.Dashboard.stories" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>DashBoard | Stories</title>
 </asp:Content>
@@ -54,7 +56,7 @@
         </div>
     </div>
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="Id" DataSourceID="SqlDataSource1" 
-    CssClass="table table-bordered table-condensed table-responsive table-hover" OnRowDeleted="GridView1_RowDeleted" AllowPaging="True" PageSize="5" OnRowDeleting="GridView1_RowDeleting"  >
+    CssClass="table table-bordered table-condensed table-responsive table-hover" OnRowDeleted="GridView1_RowDeleted" AllowPaging="True" PageSize="5" OnRowDeleting="GridView1_RowDeleting" OnRowUpdating="GridView1_RowUpdating1"  >
         <Columns>
             <asp:CommandField ButtonType="Button" ShowEditButton="True" ControlStyle-CssClass="btn btn-warning" HeaderText="Edit Action"    HeaderStyle-Width="14%" ItemStyle-Width="14%"
             FooterStyle-Width="14%"  ControlStyle-ForeColor="White"/>
@@ -62,7 +64,10 @@
             FooterStyle-Width="10%"/>
             <asp:BoundField DataField="Title" HeaderText="Title" SortExpression="Title" />
             <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-            <asp:TemplateField HeaderText="Image">
+             <asp:TemplateField HeaderText="Image" >
+                <EditItemTemplate>
+                        <asp:FileUpload ID="FileUploadImage"  runat="server" CssClass="form-control"/>
+                    </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="imageLabel" runat="server" Visible="false" Text='<%# ResolveUrl(Eval("Image").ToString()) %>' ></asp:Label>
                       <asp:Image ID="Image1" Height = "50" Width = "50" runat="server" 

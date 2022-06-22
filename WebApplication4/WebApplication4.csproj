@@ -75,6 +75,7 @@
     <Content Include="js\main.js" />
     <Content Include="Dashboard\Layout.Master" />
     <Content Include="pages\Authlayout.Master" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -83,14 +84,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\MyHomeWork.mdf" />
-    <Content Include="App_Data\MyHomeWork_log.ldf">
-      <DependentUpon>MyHomeWork.mdf</DependentUpon>
-    </Content>
     <Content Include="pages\Home.aspx" />
+    <Content Include="pages\movies.aspx" />
     <Content Include="pages\Register.aspx" />
     <Content Include="pages\Login.aspx" />
     <Content Include="Dashboard\songs.aspx" />
+    <Content Include="pages\songs.aspx" />
+    <Content Include="pages\stories.aspx" />
     <Content Include="styles\styles.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -139,6 +139,13 @@
     <Compile Include="pages\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\movies.aspx.cs">
+      <DependentUpon>movies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\movies.aspx.designer.cs">
+      <DependentUpon>movies.aspx</DependentUpon>
+    </Compile>
     <Compile Include="pages\Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -153,6 +160,20 @@
     <Compile Include="pages\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="pages\songs.aspx.cs">
+      <DependentUpon>songs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\songs.aspx.designer.cs">
+      <DependentUpon>songs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="pages\stories.aspx.cs">
+      <DependentUpon>stories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="pages\stories.aspx.designer.cs">
+      <DependentUpon>stories.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Dashboard\songs.aspx.cs">
       <DependentUpon>songs.aspx</DependentUpon>
@@ -163,6 +184,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="uploads\movies\" />
     <Folder Include="uploads\songs\" />
     <Folder Include="uploads\stories\" />

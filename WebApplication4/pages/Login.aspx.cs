@@ -11,7 +11,7 @@ namespace WebApplication4.pages
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MyHomeWork.mdf;Integrated Security=True";
+        string connectionString = @"Data Source=SQL8002.site4now.net;Initial Catalog=db_a889d5_schooldb;User Id=db_a889d5_schooldb_admin;Password=Alaa6865978";
         protected void Page_Load(object sender, EventArgs e)
         {
             

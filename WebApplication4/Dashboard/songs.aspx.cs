@@ -11,7 +11,7 @@ namespace WebApplication4
 {
     public partial class songs : System.Web.UI.Page
     {
-        string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MyHomeWork.mdf;Integrated Security=True";
+        string connectionString = "Data Source=SQL8002.site4now.net;Initial Catalog=db_a889d5_schooldb;User Id=db_a889d5_schooldb_admin;Password=Alaa6865978";
         protected void Page_Load(object sender, EventArgs e)
         {
             if (GridView1.Rows.Count == 0)
@@ -48,6 +48,9 @@ namespace WebApplication4
                 con.Close();
 
                 GridView1.DataBind();
+                title.Text = "";
+                
+                path.Text = "";
                 if (GridView1.Rows.Count == 0)
                 {
                     Label1.Visible = true;
@@ -90,6 +93,38 @@ namespace WebApplication4
             }
 
             
+        }
+        
+
+
+
+        protected void GridView1_RowUpdating1(object sender, GridViewUpdateEventArgs e)
+        {
+            GridViewRow row = (GridViewRow)GridView1.Rows[e.RowIndex];
+
+
+            int id = Int32.Parse(GridView1.DataKeys[e.RowIndex].Value.ToString());
+
+
+            FileUpload fileUpload = row.Cells[0].FindControl("FileUploadImage") as FileUpload;
+
+            if (fileUpload != null && fileUpload.HasFile)
+            {
+                Random randomNumber = new Random();
+                var uid = randomNumber.Next(100000, 1000000);
+
+                string ExtensionImage = Path.GetExtension(fileUpload.FileName);
+                string FileName = Path.GetFileNameWithoutExtension(fileUpload.FileName) + uid;
+
+                string pathImage = "~/uploads/songs/" + (FileName + uid).ToString() + ExtensionImage;
+                fileUpload.SaveAs(Server.MapPath(pathImage));
+                SqlConnection con = new SqlConnection(connectionString);
+                SqlCommand cmd = new SqlCommand("update songs set Image='" + pathImage + "'  where Id=" + id + "", con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+
         }
     }
 }

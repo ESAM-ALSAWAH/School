@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_NewBackgroundProfile>True</_NewBackgroundProfile>
+    <_PublishTargetUrl>C:\Users\Esam\Documents\Visual Studio 2017\Projects\WebApplication4\WebApplication4\bin\Release\PublishOutput</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>12/13/2016 03:10:32</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/WebApplication4.dll">
+      <publishTime>06/20/2022 20:56:30</publishTime>
+    </File>
+    <File Include="Dashboard/Layout.Master">
+      <publishTime>06/20/2022 18:29:51</publishTime>
+    </File>
+    <File Include="Dashboard/movies.aspx">
+      <publishTime>06/20/2022 20:43:03</publishTime>
+    </File>
+    <File Include="Dashboard/songs.aspx">
+      <publishTime>06/20/2022 20:46:51</publishTime>
+    </File>
+    <File Include="Dashboard/stories.aspx">
+      <publishTime>06/20/2022 20:47:28</publishTime>
+    </File>
+    <File Include="Dashboard/styles/styles.css">
+      <publishTime>05/28/2022 20:34:58</publishTime>
+    </File>
+    <File Include="Dashboard/user.aspx">
+      <publishTime>06/16/2022 10:22:03</publishTime>
+    </File>
+    <File Include="js/main.js">
+      <publishTime>05/20/2022 16:10:15</publishTime>
+    </File>
+    <File Include="lib/aos.css">
+      <publishTime>06/02/2022 12:55:36</publishTime>
+    </File>
+    <File Include="lib/aos.js">
+      <publishTime>06/02/2022 12:56:08</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>05/19/2022 22:11:03</publishTime>
+    </File>
+    <File Include="pages/Authlayout.Master">
+      <publishTime>06/20/2022 18:29:45</publishTime>
+    </File>
+    <File Include="pages/Home.aspx">
+      <publishTime>06/17/2022 11:34:11</publishTime>
+    </File>
+    <File Include="pages/Login.aspx">
+      <publishTime>05/28/2022 23:35:54</publishTime>
+    </File>
+    <File Include="pages/movies.aspx">
+      <publishTime>06/17/2022 11:17:15</publishTime>
+    </File>
+    <File Include="pages/Register.aspx">
+      <publishTime>06/17/2022 10:21:27</publishTime>
+    </File>
+    <File Include="pages/songs.aspx">
+      <publishTime>06/17/2022 11:35:13</publishTime>
+    </File>
+    <File Include="pages/stories.aspx">
+      <publishTime>06/17/2022 11:11:34</publishTime>
+    </File>
+    <File Include="styles/styles.css">
+      <publishTime>06/17/2022 11:17:49</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>06/20/2022 20:56:31</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

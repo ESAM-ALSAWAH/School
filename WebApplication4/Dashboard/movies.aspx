@@ -55,7 +55,7 @@
         </div>
     </div>
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" 
-    CssClass="table table-bordered table-condensed table-responsive table-hover"  AllowPaging="True" PageSize="5" DataKeyNames="Id" OnRowDeleted="GridView1_RowDeleted" OnRowDeleting="GridView1_RowDeleting" >
+    CssClass="table table-bordered table-condensed table-responsive table-hover"  AllowPaging="True" PageSize="5" DataKeyNames="Id" OnRowDeleted="GridView1_RowDeleted" OnRowDeleting="GridView1_RowDeleting" OnRowUpdated="GridView1_RowUpdated" OnRowUpdating="GridView1_RowUpdating" >
         <Columns>
           
                        
@@ -73,6 +73,7 @@
                 <EditItemTemplate>
                         <asp:TextBox ID="pathEdit" runat="server" Text='<%# Bind("Path") %>'></asp:TextBox>
                     </EditItemTemplate>
+                
                 <ItemTemplate>
 
                     <asp:HyperLink ID="linkPath" runat="server" NavigateUrl='<%# ResolveUrl(Eval("Path").ToString()) %>' Target="_blank" Text="Link" />
@@ -80,7 +81,9 @@
                 </ItemTemplate>
             </asp:TemplateField>
             <asp:TemplateField HeaderText="Image" >
-                
+                <EditItemTemplate>
+                        <asp:FileUpload ID="FileUploadImage"  runat="server" CssClass="form-control"/>
+                    </EditItemTemplate>
                 <ItemTemplate>
                     <asp:Label ID="imageLabel" runat="server" Visible="false" Text='<%# ResolveUrl(Eval("Image").ToString()) %>' ></asp:Label>
                       <asp:Image ID="Image1" Height = "50" Width = "50" runat="server" 
@@ -94,6 +97,11 @@
         <PagerSettings Mode="NumericFirstLast" />
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [movies]" DeleteCommand="DELETE FROM [movies] WHERE [Id] =@Id" UpdateCommand="UPDATE [movies] SET [Title] = @Title,[Description] = @Description, [Path] = @Path WHERE [Id] = @Id"></asp:SqlDataSource>
+    
+    
+    
+
+      <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
     
     
     
